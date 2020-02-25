@@ -1,0 +1,195 @@
+# Loops and Iterations - For/While Loops in Pyhton
+
+nums = [2, 4, 6, 8, 10]
+
+for num in nums:
+    print(num)
+
+
+# break in loops
+
+nums = [1, 2, 3, 4, 5, 6,7]
+
+for num in nums:
+    if num == 4:
+        print("We got our number!")
+        break
+    print(num)
+
+# continue in loops
+# for loop
+nums = [3, 6, 9, 12, 15, 18]
+
+for num in nums:
+    if num == 12:
+        print("Its your number!")
+        continue
+    print(num)
+
+for i in range(1, 11):
+    print(i)
+# while loop
+
+x = 0
+
+while x < 10:
+    if x == 4:
+        break
+    print(x)
+    x += 1
+
+# Another while loop example
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+
+print("Done with loop!")
+
+# Another While loop example
+x = 0
+while x < 5:
+    print("Not there yet, x=" + str(x))
+    x = x + 1
+print("We got it as now x=" + str(x))
+
+# An other example of while loop
+
+def count_down(start_number):
+  current = start_number
+  while (current > 0):
+    print(current)
+    current -= 1
+  print("Zero!")
+
+count_down(5)
+count_down(3)
+
+# While loop example
+
+my_variable = 5
+while my_variable < 8:
+    print("Welcome to my paradise!")
+    my_variable += 1
+
+# While loop example
+def smallest_prime_factor(x):
+# Returns the smallest prime number that is a divisor of x
+# Start checking with 2, then move up one by one
+    n = 2
+    while n <= x:
+        if x % n == 0:
+            return n
+        else:
+            n += 1
+
+
+print(smallest_prime_factor(12)) # should be 2
+print(smallest_prime_factor(15)) # should be 3
+
+# While loop  practice
+
+def print_prime_factors(number):
+# Start with two, which is the first prime
+    factor = 2
+# Keep going until the factor is larger than the number
+    while factor <= number:# Check if factor is a divisor of number
+     if number % factor == 0:
+      # If it is, print it and divide the original number
+      print(factor)
+      number = number / factor
+     else: # If it's not, increment the factor by one
+         factor += 1
+    return "Done"
+
+print_prime_factors(100)
+
+
+
+# while loop week 3 quiz 4
+
+def sum_divisors(n):
+   x = 1  #initialize the denominator
+   y = 0  # initialize a variable to store denominators
+   while n != 0 and x < n:  # this two conditions must be true for the loop
+    if n % x == 0:  # This if is to check the module of n/x is
+      y = y + x  # if true, store x in variable a
+      x += 1  # increase x by 1
+    return y
+print(sum_divisors(6))  # Should be 1+2+3=6
+print(sum_divisors(12))  # Should be 1+2+3+4+6=16
+
+# For loop in Python
+
+def square(n):
+    return n*n
+
+def sum_squares(x):
+    sum = 0
+    for n in range(x):
+        sum += square(n)
+    return sum
+
+print(sum_squares(10))
+
+# For loop example
+friends = ['Saeed', 'James', 'Shoiab', 'Cristiano','Ezza', 'Ville']
+for friend in friends:
+         print("Hollaa, welcome to the board: " + friend)
+
+# Calculating factorial by using for loop
+def factorial(n):
+    result = 1
+    for i in range(n):
+        result = n*result
+        n -= 1
+    return result
+
+print(factorial(4)) # should return 24
+print(factorial(5)) # should return 120
+print(factorial(7))
+
+# Calculating temperature by using for loop with conversion formula
+def to_celsius(x):
+    return (x-32)*5/9
+for x in range(0,101,10):
+    print(x, to_celsius(x))
+
+# Nested for Loops
+# example_1
+for left in range(7):
+    for right in range(left, 7):
+        print("[" + str(left) + "|" + str(right) + "]", end=" ")
+    print()
+# example_2
+teams = ['Dragons', 'Wolves', 'Pandas', 'Unicorns']
+for home_team in teams:
+    for away_team in teams:
+        if home_team != away_team:
+            print("The match will be between: " + home_team + " VS " + away_team)
+
+# example_3
+
+def greeet_family(members):
+    for member in members:
+        print("Holla! " + member + ", How are you doing!")
+greeet_family(["Baba jaan", "Mama Jaan", "Naveed", "Shoaib", "Hamza", "Ezza", "Muhammad"])
+
+
+
+
+# Recursion example
+
+def factorial(n):
+    print("Factorial called with " + str(n))
+    if n < 3:
+        print("Returning 1")
+        return 1
+    result = n * factorial(n-1)
+    print("Returning " + str(result) + " for factorial of " + str(n))
+    return result
+factorial(5)
+
+for x in range(10):
+    for y in range(x):
+        print(y)
